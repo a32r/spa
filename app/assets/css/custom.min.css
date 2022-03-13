@@ -1,0 +1,1 @@
+.container{max-width:800px;background-color:#90ee90;display:-ms-grid;display:grid;grid-template-areas:"header header" "left right" "footer footer"}.container div:first-of-type{-ms-grid-row:1;-ms-grid-column:1;-ms-grid-column-span:2;grid-area:header}.container label:last-of-type,.container textarea{-ms-grid-row:3;-ms-grid-column:1;-ms-grid-column-span:2;grid-area:footer}

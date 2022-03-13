@@ -3,9 +3,9 @@
 	background-color: lightgreen;
 	display: grid;
 	grid-template-areas:
-	"header header"
-	"left right"
-	"footer footer";
+		"header header"
+		"left right"
+		"footer footer";
 
 	div:first-of-type {
 		grid-area: header;
