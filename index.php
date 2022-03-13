@@ -7,7 +7,13 @@
 	<title>Ajax Test</title>
 </head>
 <body>
-	
+
+	<div class="container">
+		<div class="header">Форма ввода данных</div>
+		<label for=""></label>
+		<input type="">
+	</div>
+
 	<script src="app/assets/js/app.min.js"></script>
 </body>
 </html>
