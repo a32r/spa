@@ -4,11 +4,21 @@
 	display: flex;
 	flex-flow: row wrap;
 	gap: 25px 50px;
-	padding: 25px;
+	padding: 10px 25px 25px;
 	border-radius: 10px;
 
 	div {
 		flex: 100%;
+	}
+
+	div:first-of-type {
+		font-family: cursive;
+		font-size: xx-large;
+		text-align: center;
+	}
+
+	div:first-of-type {
+		align-self: stretch;
 	}
 
 	div:nth-of-type(2), div:nth-of-type(3) {
