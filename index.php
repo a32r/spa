@@ -13,15 +13,15 @@
 		<div>Форма ввода данных</div>
 		<div>
 			<label for="name">Имя</label>
-			<input class="form-control" type="text" form="send" name="name">
+			<input class="form-control" type="text" form="send" name="name" placeholder="Имя">
 		</div>
 		<div>
 			<label for="email">Email</label>
-			<input class="form-control" type="text" form="send" name="email">
+			<input class="form-control" type="text" form="send" name="email" placeholder="Email">
 		</div>
 		<div>
 			<label for="description">Описание</label>
-			<textarea class="form-control" form="send" name="description" rows="5"></textarea>
+			<textarea class="form-control" form="send" name="description" rows="5" placeholder="Описание"></textarea>
 		</div>
 		<input class="btn btn-primary" type="submit" form="send" value="Отправить">
 	</div>
