@@ -11,14 +11,19 @@
 
 	<div class="container">
 		<div>Форма ввода данных</div>
-		<label for="name">Имя</label>
-		<input class="form-control" type="text" form="send" name="name">
-		<label for="email">Email</label>
-		<input class="form-control" type="text" form="send" name="email">
-		<label for="description">Описание</label>
-		<textarea class="form-control" form="send" name="description" rows="5"></textarea>
+		<div>
+			<label for="name">Имя</label>
+			<input class="form-control" type="text" form="send" name="name">
+		</div>
+		<div>
+			<label for="email">Email</label>
+			<input class="form-control" type="text" form="send" name="email">
+		</div>
+		<div>
+			<label for="description">Описание</label>
+			<textarea class="form-control" form="send" name="description" rows="5"></textarea>
+		</div>
 		<input class="btn btn-primary" type="submit" form="send" value="Отправить">
-
 	</div>
 
 	<script src="app/assets/js/app.min.js"></script>
