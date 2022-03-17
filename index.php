@@ -13,18 +13,19 @@
 		<div>Форма ввода данных</div>
 		<div>
 			<label for="name">Имя</label>
-			<input class="form-control" type="text" form="send" name="name" placeholder="Имя">
+			<input class="form-control" type="text" form="send" name="name" id="name" placeholder="Имя">
 		</div>
 		<div>
 			<label for="email">Email</label>
-			<input class="form-control" type="text" form="send" name="email" placeholder="Email">
+			<input class="form-control" type="text" form="send" name="email" id="email" placeholder="Email">
 		</div>
 		<div>
 			<label for="description">Описание</label>
-			<textarea class="form-control" form="send" name="description" rows="5" placeholder="Описание"></textarea>
+			<textarea class="form-control" form="send" name="description" rows="5" id="description" placeholder="Описание"></textarea>
 		</div>
 		<input class="btn btn-primary" type="submit" form="send" value="Отправить">
 	</div>
+	<div class="message"></div>
 
 	<script src="app/assets/js/app.min.js"></script>
 </body>
