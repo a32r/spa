@@ -2,7 +2,7 @@
 
 require_once('db_connect.php');
 
-if(!empty($_POST['name'])) {
+if(!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['description'])) {
 	$name = htmlspecialchars($_POST['name']);
 	$email = $_POST['email'];
 	$description = htmlspecialchars($_POST['description']);
