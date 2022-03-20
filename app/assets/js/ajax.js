@@ -29,6 +29,14 @@ $('input[value="Отправить"]').click(function(e) {
 						$('.message').remove();
 					}, 1000);
 				}
+			})
+			.fail(function() {
+				if ($('.message').length == 0) {
+					$('.container').append('<div class="message">Ошибка ввода данных</div>');
+					setTimeout(function() {
+						$('.message').remove();
+					}, 1000);
+				}
 			});
 		name_js = undefined;
 		email_js = undefined;

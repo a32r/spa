@@ -7,10 +7,6 @@
 	padding: 10px 25px 25px;
 	border-radius: 10px;
 
-	div {
-		flex: 100%;
-	}
-
 	div:first-of-type,.message {
 		font-family: cursive;
 		font-size: xx-large;
@@ -19,6 +15,10 @@
 
 	div:first-of-type {
 		align-self: stretch;
+	}
+
+	div {
+		flex: 100%;
 	}
 
 	div:nth-of-type(2), div:nth-of-type(3) {
