@@ -25,7 +25,6 @@
 		</div>
 		<input class="btn btn-primary" type="submit" form="send" value="Отправить">
 	</div>
-	<div class="message"></div>
 
 	<script src="app/assets/js/app.min.js"></script>
 </body>
