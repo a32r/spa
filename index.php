@@ -9,19 +9,19 @@
 <body>
 <form id="send" method="post" action="">
 
-	<div class="container">
+	<div class="send">
 		<div>Форма ввода данных</div>
 		<div>
 			<label for="name">Имя</label>
-			<input class="form-control" type="text" form="send" name="name" id="name" placeholder="Имя">
+			<input class="form-control name" type="text" form="send" name="name" placeholder="Имя">
 		</div>
 		<div>
 			<label for="email">Email</label>
-			<input class="form-control" type="text" form="send" name="email" id="email" placeholder="Email">
+			<input class="form-control email" type="text" form="send" name="email" placeholder="Email">
 		</div>
 		<div>
 			<label for="description">Описание</label>
-			<textarea class="form-control" form="send" name="description" rows="5" id="description" placeholder="Описание"></textarea>
+			<textarea class="form-control description" form="send" name="description" rows="5" placeholder="Описание"></textarea>
 		</div>
 		<input class="btn btn-primary" type="submit" form="send" value="Отправить">
 	</div>
