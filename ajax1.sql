@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: localhost
--- Время создания: Мар 15 2022 г., 21:33
+-- Время создания: Мар 21 2022 г., 20:32
 -- Версия сервера: 10.4.22-MariaDB
 -- Версия PHP: 8.1.2
 
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- База данных: `ajax1`
 --
-CREATE DATABASE IF NOT EXISTS `ajax1` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `ajax1`;
 
 -- --------------------------------------------------------
 
@@ -30,6 +28,33 @@ USE `ajax1`;
 --
 
 CREATE TABLE `clients` (
+  `id` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `description` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `clients`
+--
+
+INSERT INTO `clients` (`id`, `name`, `email`, `description`) VALUES
+(1, 'Первый', 'first@mail.com', 'Первый пользователь'),
+(2, 'Второй', 'second@mail.com', 'Второй пользователь'),
+(3, 'Третий', 'third@mail.com', 'Третий пользователь'),
+(4, 'Четвертый', 'fourth@mail.com', 'Четвертый пользователь'),
+(5, 'Пятый', 'fiveth@mail.com', 'Пятый пользователь'),
+(6, 'Шестой', 'sixth@mail.com', 'Шестой пользователь'),
+(7, 'Седьмой', 'seventh@mail.com', 'Седьмой пользователь'),
+(8, 'Восьмой', 'eighth@mail.com', 'Восьмой пользователь');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `send`
+--
+
+CREATE TABLE `send` (
   `id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
@@ -47,6 +72,12 @@ ALTER TABLE `clients`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Индексы таблицы `send`
+--
+ALTER TABLE `send`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT для сохранённых таблиц
 --
 
@@ -54,6 +85,12 @@ ALTER TABLE `clients`
 -- AUTO_INCREMENT для таблицы `clients`
 --
 ALTER TABLE `clients`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT для таблицы `send`
+--
+ALTER TABLE `send`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
