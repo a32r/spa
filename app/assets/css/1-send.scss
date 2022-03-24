@@ -1,21 +1,12 @@
 .send {
-	// max-width: 800px;
 	background-color: lightgreen;
 	display: flex;
 	flex-flow: row wrap;
-	gap: 25px 50px;
-	margin: 0 auto;
-	padding: 10px 25px 25px;
-	border-radius: 10px;
 
 	div:first-of-type, .message {
 		font-family: cursive;
 		font-size: xx-large;
 		text-align: center;
-	}
-
-	div:first-of-type {
-		align-self: stretch;
 	}
 
 	div {

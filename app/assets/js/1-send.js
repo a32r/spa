@@ -44,3 +44,6 @@ $('.send input[value="Отправить"]').click(function(e) {
 		$('.send .name, .send .email, .send .description').val('');
 	};
 });
+
+// Temporary hide send block
+// $('.send').hide();
