@@ -1,4 +1,23 @@
 .container {
 	display: flex;
-	flex-flow: row nowrap;
+	align-items: flex-start;
+	column-gap: 20px;
+
+	.nav, .content {
+		display: flex;
+		flex-flow: column;
+		row-gap: 10px;
+	}
+
+	.nav {
+		max-width: 150px;
+
+		button {
+			border-radius: 6px;
+		}
+	}
+
+	.content {
+		max-width: 700px;
+	}
 }
