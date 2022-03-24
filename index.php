@@ -7,49 +7,48 @@
 		<title>Ajax Test</title>
 	</head>
 	<body>
-		<form id="send" method="post" action="">
-			<div class="container">
+		<div class="container">
 
-				<div class="nav">
-					<button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target=".send">
-						Ввести данные
-					</button>
-					<button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target=".get">
-						Вывести данные
-					</button>
+			<div class="nav">
+				<button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target=".send">
+					Ввести данные
+				</button>
+				<button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target=".get">
+					Вывести данные
+				</button>
+			</div>
+
+			<div class="content">
+
+				<div class="send card">
+					<div>Форма ввода данных</div>
+					<div>
+						<label for="name">Имя</label>
+						<input class="form-control name" type="text" name="name" placeholder="Имя">
+					</div>
+					<div>
+						<label for="email">Email</label>
+						<input class="form-control email" type="text" name="email" placeholder="Email">
+					</div>
+					<div>
+						<label for="description">Описание</label>
+						<textarea class="form-control description" name="description" rows="5" placeholder="Описание"></textarea>
+					</div>
+					<input class="btn btn-primary" type="submit" value="Отправить">
 				</div>
 
-				<div class="content">
-
-					<div class="send card">
-						<div>Форма ввода данных</div>
-						<div>
-							<label for="name">Имя</label>
-							<input class="form-control name" type="text" form="send" name="name" placeholder="Имя">
-						</div>
-						<div>
-							<label for="email">Email</label>
-							<input class="form-control email" type="text" form="send" name="email" placeholder="Email">
-						</div>
-						<div>
-							<label for="description">Описание</label>
-							<textarea class="form-control description" form="send" name="description" rows="5" placeholder="Описание"></textarea>
-						</div>
-						<input class="btn btn-primary" type="submit" form="send" value="Отправить">
-					</div>
-
-					<div class="get">
-						<p>
-						Форма входа
-						</p>
-						<p>
-						Вывод данных
-						</p>
-					</div>
-
+				<div class="get">
+					<p>
+					Форма входа
+					</p>
+					<p>
+					Вывод данных
+					</p>
 				</div>
 
 			</div>
-			<script src="app/assets/js/app.min.js"></script>
+
+		</div>
+		<script src="app/assets/js/app.min.js"></script>
 	</body>
 </html>
