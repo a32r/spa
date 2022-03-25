@@ -21,10 +21,30 @@
 		max-width: 700px;
 
 		.card {
-			border-radius: 10px;
+			display: flex;
+			flex-flow: row wrap;
 			gap: 25px 50px;
 			margin: 0 auto;
 			padding: 10px 25px 25px;
+			border-radius: 10px;
+		}
+
+		.send {
+			background-color: lightgreen;
+
+			div:first-of-type, .message {
+				font-family: cursive;
+				font-size: xx-large;
+				text-align: center;
+			}
+
+			div {
+				flex: 100%;
+			}
+
+			div:nth-of-type(2), div:nth-of-type(3) {
+				flex: 45%;
+			}
 		}
 	}
 }
