@@ -38,12 +38,16 @@
 				</div>
 
 				<div class="get card">
-					<div class="card-title">Для просмотра записей введите логин и пароль</div>
-						<label for="login">Логин</label>
+					<div>Форма входа</div>
+					<div>
+						<label for="login">Логин (Admin)</label>
 						<input class="form-control name" type="text" name="login" placeholder="Admin" value="Admin">
+					</div>
+					<div>
 						<label for="pass">Пароль (111)</label>
 						<input class="form-control name" type="password" name="pass" placeholder="111">
-						<input class="btn btn-primary" type="submit" value="Вход">
+					</div>
+					<input class="btn btn-primary" type="submit" value="Вход">
 				</div>
 
 			</div>

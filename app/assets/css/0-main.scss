@@ -6,7 +6,7 @@
 	.nav, .content {
 		display: flex;
 		flex-flow: column;
-		row-gap: 10px;
+		gap: 15px;
 	}
 
 	.nav {
@@ -27,10 +27,6 @@
 			margin: 0 auto;
 			padding: 10px 25px 25px;
 			border-radius: 10px;
-		}
-
-		.send {
-			background-color: lightgreen;
 
 			div:first-of-type, .message {
 				font-family: cursive;
@@ -45,6 +41,18 @@
 			div:nth-of-type(2), div:nth-of-type(3) {
 				flex: 45%;
 			}
+
+			.btn {
+				min-width: 120px;
+			}
+		}
+
+		.send {
+			background-color: lightgreen;
+		}
+
+		.get {
+			background-color: lightgray;
 		}
 	}
 }
