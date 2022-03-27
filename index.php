@@ -45,7 +45,7 @@
 					</div>
 					<div>
 						<label for="pass">Пароль (111)</label>
-						<input class="form-control name" type="password" name="pass" placeholder="111">
+						<input class="form-control pass" type="password" name="pass" placeholder="111" value="111">
 					</div>
 					<input class="btn btn-primary" type="submit" value="Вход">
 				</div>
