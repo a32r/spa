@@ -31,6 +31,7 @@ function scripts() {
 	return src([
 		'./node_modules/jquery/dist/jquery.min.js', // Подключение jQuery
 		'./node_modules/bootstrap/dist/js/bootstrap.bundle.js', // Подкдючение Bootstrap js с Popper
+		'./node_modules/node-forge/dist/forge.min.js', // Подкдючение node-forge для вычисления sha256sum
 		'./src/app/assets/js/custom.min.js' // Подключение пользовательских скриптов
 	], { allowEmpty: true })
 		.pipe(concat('app.min.js')) // Объединение скриптов в один файл

@@ -10,8 +10,14 @@ $('.get .pass').blur(function() {
 
 $('.get input[value="Вход"]').click(function(e) {
 	e.preventDefault();
+	// console.log(pass_js);
+	// console.log(salt);
+	// console.log(salt + pass_js);
 	console.log(login_js);
-	console.log(pass_js);
-	console.log(salt);
-	console.log(salt + pass_js);
+	var md = forge.md.sha256.create();
+	md.update(login_js);
+	console.log(md.digest().toHex());
+	// str=JSON.stringify(md,null,4);
+	// console.log(str);
 });
+
