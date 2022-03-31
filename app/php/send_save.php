@@ -1,6 +1,7 @@
 <?php
 
-require_once('send_connect.php');
+require_once('functions.php');
+require_once('db_connect.php');
 
 if(!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['description'])) {
 	$name = htmlspecialchars($_POST['name']);

@@ -46,4 +46,4 @@ $('.send input[value="Отправить"]').click(function(e) {
 });
 
 // Temporary hide send block
-// $('.send').hide();
+$('.send').hide();

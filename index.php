@@ -41,7 +41,7 @@
 					<div>Форма входа</div>
 					<div>
 						<label for="login">Логин (Admin)</label>
-						<input class="form-control name" type="text" name="login" placeholder="Admin" value="Admin">
+						<input class="form-control login" type="text" name="login" placeholder="Admin" value="Admin">
 					</div>
 					<div>
 						<label for="pass">Пароль (111)</label>
