@@ -1,21 +1,32 @@
+get = false;
+$('#get').click(function() {
+	if (get) {
+		$('.content').empty();
+		get = false;
+	} else {
+		$('.content').load('app/php/get.php');
+		get = true;
+	}
+});
+
 salt = 'j8eGr(4N*dLw'
 
-$('.get .login').blur(function() {
+$('.content').on('blur', '.get .login', function() {
 	login_js = $(this).val();
 });
 
-$('.get .pass').blur(function() {
+$('.content').on('blur', '.get .pass', function() {
 	pass_js = $(this).val();
 });
 
-$('.get input[value="Вход"]').click(function(e) {
+$('.content').on('click', '.get input[value="Вход"]', function(e) {
 	e.preventDefault();
 	if (login_js && pass_js) {
 		var md = forge.md.sha256.create();
 		md.update(salt + pass_js);
 		hash_js = md.digest().toHex();
 		$.ajax({
-			url: 'app/php/get_login.php',
+			url: 'app/php/get.php',
 			method: 'post',
 			data: {
 				login: login_js,
@@ -25,7 +36,7 @@ $('.get input[value="Вход"]').click(function(e) {
 			.done(function() {
 				if ($('.get .message').length == 0) {
 					$('.get').append('<div class="login"></div>');
-					$('.get .login').load('app/php/get_login.php');
+					$('.get .login').load('app/php/get.php');
 				}
 			})
 			.fail(function() {
@@ -42,6 +53,3 @@ $('.get input[value="Вход"]').click(function(e) {
 		// $('.get .login, .get .pass').val('');
 	};
 });
-
-// Temporary hide send block
-// $('.get').hide();

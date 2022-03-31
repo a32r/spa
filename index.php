@@ -10,45 +10,15 @@
 		<div class="container">
 
 			<div class="nav">
-				<button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target=".send">
+				<button id="send" class="btn btn-primary" type="button">
 					Ввести данные
 				</button>
-				<button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target=".get">
+				<button id="get" class="btn btn-warning" type="button">
 					Вывести данные
 				</button>
 			</div>
 
 			<div class="content">
-
-				<div class="send card">
-					<div>Форма ввода данных</div>
-					<div>
-						<label for="name">Имя</label>
-						<input class="form-control name" type="text" name="name" placeholder="Имя">
-					</div>
-					<div>
-						<label for="email">Email</label>
-						<input class="form-control email" type="text" name="email" placeholder="Email">
-					</div>
-					<div>
-						<label for="description">Описание</label>
-						<textarea class="form-control description" name="description" rows="5" placeholder="Описание"></textarea>
-					</div>
-					<input class="btn btn-primary" type="submit" value="Отправить">
-				</div>
-
-				<div class="get card">
-					<div>Форма входа</div>
-					<div>
-						<label for="login">Логин (Admin)</label>
-						<input class="form-control login" type="text" name="login" placeholder="Admin" value="Admin">
-					</div>
-					<div>
-						<label for="pass">Пароль (111)</label>
-						<input class="form-control pass" type="password" name="pass" placeholder="111" value="111">
-					</div>
-					<input class="btn btn-primary" type="submit" value="Вход">
-				</div>
 
 			</div>
 

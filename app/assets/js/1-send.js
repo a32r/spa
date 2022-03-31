@@ -1,20 +1,31 @@
-$('.send .name').blur(function() {
+send = false;
+$('#send').click(function() {
+	if (send) {
+		$('.content').empty();
+		send = false;
+	} else {
+		$('.content').load('app/php/send.php');
+		send = true;
+	}
+});
+
+$('.content').on('blur', '.send .name', function() {
 	name_js = $(this).val();
 });
 
-$('.send .email').blur(function() {
+$('.content').on('blur', '.send .email', function() {
 	email_js = $(this).val();
 });
 
-$('.send .description').blur(function() {
+$('.content').on('blur', '.send .description', function() {
 	description_js = $(this).val();
 });
 
-$('.send input[value="Отправить"]').click(function(e) {
+$('.content').on('click', '.send input[value="Отправить"]', function(e) {
 	e.preventDefault();
 	if (name_js && email_js && description_js) {
 		$.ajax({
-			url: 'app/php/send_save.php',
+			url: 'app/php/send.php',
 			method: 'post',
 			data: {
 				name: name_js,
@@ -44,6 +55,3 @@ $('.send input[value="Отправить"]').click(function(e) {
 		$('.send .name, .send .email, .send .description').val('');
 	};
 });
-
-// Temporary hide send block
-$('.send').hide();
