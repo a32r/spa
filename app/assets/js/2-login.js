@@ -1,11 +1,14 @@
-get = false;
 $('#get').click(function() {
-	if (get) {
-		$('.content').empty();
-		get = false;
+	if (content) {
+		if ($('.content .get').length == 0) {
+			$('.content').load('app/php/login.php');
+		} else {
+			$('.content').empty();
+			content = false;
+		}
 	} else {
-		$('.content').load('app/php/get.php');
-		get = true;
+		$('.content').load('app/php/login.php');
+		content = true;
 	}
 });
 

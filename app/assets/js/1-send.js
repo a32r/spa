@@ -1,11 +1,14 @@
-send = false;
 $('#send').click(function() {
-	if (send) {
-		$('.content').empty();
-		send = false;
+	if (content) {
+		if ($('.content .send').length == 0) {
+			$('.content').load('app/php/send.php');
+		} else {
+			$('.content').empty();
+			content = false;
+		}
 	} else {
 		$('.content').load('app/php/send.php');
-		send = true;
+		content = true;
 	}
 });
 

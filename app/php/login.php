@@ -1,3 +1,16 @@
+<?php
+
+require_once('functions.php');
+require_once('db_connect.php');
+
+if(!empty($_POST['login'])) {
+	$login = $_POST['login'];
+	echo "Логин: $login";
+	die();
+}
+
+?>
+
 <div class="get card">
 	<div>Форма входа</div>
 	<div>
