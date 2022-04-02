@@ -29,17 +29,23 @@ $('.content').on('click', '.get input[value="Вход"]', function(e) {
 		md.update(salt + pass_js);
 		hash_js = md.digest().toHex();
 		$.ajax({
-			url: 'app/php/get.php',
+			url: 'app/php/login.php',
 			method: 'post',
 			data: {
 				login: login_js,
 				hash: hash_js
 			}
 		})
-			.done(function() {
+			.done(function(data) {
+				if(data) {
+					$('.content').text('Нет');
+				}
 				if ($('.get .message').length == 0) {
-					$('.get').append('<div class="login"></div>');
-					$('.get .login').load('app/php/get.php');
+					$('.get').append('<div class="message">Успешный вход</div>');
+					console.log(data);
+					setTimeout(function() {
+						$('.get .message').remove();
+					}, 1000);
 				}
 			})
 			.fail(function() {
