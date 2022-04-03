@@ -26,7 +26,7 @@ $('.content').on('blur', '.send .description', function() {
 
 $('.content').on('click', '.send input[value="Отправить"]', function(e) {
 	e.preventDefault();
-	if (name_js && email_js && description_js) {
+	if ((typeof name_js !== 'undefined') && (typeof email_js !== 'undefined') && (typeof description_js !== 'undefined')) {
 		$.ajax({
 			url: 'app/php/send.php',
 			method: 'post',
@@ -36,12 +36,14 @@ $('.content').on('click', '.send input[value="Отправить"]', function(e)
 				description: description_js
 			}
 		})
-			.done(function() {
-				if ($('.send .message').length == 0) {
-					$('.send').append('<div class="message">Данные успешно внесены в базу</div>');
-					setTimeout(function() {
-						$('.send .message').remove();
-					}, 1000);
+			.done(function(data) {
+				if(data) {
+					if ($('.send .message').length == 0) {
+						$('.send').append('<div class="message">Данные успешно внесены в базу</div>');
+						setTimeout(function() {
+							$('.send .message').remove();
+						}, 1000);
+					}
 				}
 			})
 			.fail(function() {
@@ -56,5 +58,12 @@ $('.content').on('click', '.send input[value="Отправить"]', function(e)
 		email_js = undefined;
 		description_js = undefined;
 		$('.send .name, .send .email, .send .description').val('');
-	};
+	} else {
+		if ($('.send .message').length == 0) {
+			$('.send').append('<div class="message">Необходимо заполнить все поля</div>');
+			setTimeout(function() {
+				$('.send .message').remove();
+			}, 1000);
+		}
+	}
 });

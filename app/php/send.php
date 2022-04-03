@@ -10,6 +10,10 @@ if(!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['descripti
 	$query = "INSERT INTO send VALUES (NULL, ?, ?, ?)";
 	$stmt = $db->prepare($query);
 	$stmt->execute([$name, $email, $description]);
+
+	if($stmt) {
+		exit(true);
+	}
 }
 
 ?>
