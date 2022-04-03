@@ -38,13 +38,18 @@ $('.content').on('click', '.get input[value="Вход"]', function(e) {
 		})
 			.done(function(data) {
 				if(data) {
-					$('.content').text('Нет');
+					message = "Успешный вход";
+				} else {
+					message = "Неверные логин и пароль";
 				}
 				if ($('.get .message').length == 0) {
-					$('.get').append('<div class="message">Успешный вход</div>');
-					console.log(data);
+					$('.get').append('<div class="message"></div>');
+					$('.get .message').text(message);
 					setTimeout(function() {
 						$('.get .message').remove();
+						if(data) {
+							$('.content').load('app/php/get_users.php');
+						}
 					}, 1000);
 				}
 			})
