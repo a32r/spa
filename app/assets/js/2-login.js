@@ -1,17 +1,4 @@
-$('#get').click(function() {
-	if (content) {
-		if ($('.content .get').length == 0) {
-			$('.content').load('app/php/login.php');
-		} else {
-			$('.content').empty();
-			content = false;
-		}
-	} else {
-		$('.content').load('app/php/login.php');
-		content = true;
-	}
-});
-
+// Define variables
 salt = 'j8eGr(4N*dLw'
 
 $('.content').on('blur', '.get .login', function() {
@@ -24,7 +11,7 @@ $('.content').on('blur', '.get .pass', function() {
 
 $('.content').on('click', '.get input[value="Вход"]', function(e) {
 	e.preventDefault();
-	if (login_js && pass_js) {
+	if ((typeof login_js !== 'undefined') && (typeof pass_js !== 'undefined')) {
 		var md = forge.md.sha256.create();
 		md.update(salt + pass_js);
 		hash_js = md.digest().toHex();
@@ -48,7 +35,7 @@ $('.content').on('click', '.get input[value="Вход"]', function(e) {
 					setTimeout(function() {
 						$('.get .message').remove();
 						if(data) {
-							$('.content').load('app/php/get_users.php');
+							$('.content').load('app/php/users.php');
 						}
 					}, 1000);
 				}
@@ -65,5 +52,12 @@ $('.content').on('click', '.get input[value="Вход"]', function(e) {
 		pass_js = undefined;
 		hash_js = undefined;
 		// $('.get .login, .get .pass').val('');
-	};
+	} else {
+		if ($('.get .message').length == 0) {
+			$('.get').append('<div class="message">Необходимо заполнить все поля</div>');
+			setTimeout(function() {
+				$('.get .message').remove();
+			}, 1000);
+		}
+	}
 });
