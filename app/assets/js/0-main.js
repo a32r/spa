@@ -1,6 +1,9 @@
 // Define variables
 content = false;
 
+// Temporary load usrs.php to .content
+$('.content').load('app/php/users.php');
+
 $('#send').click(function() {
 	if (content) {
 		if ($('.content .send').length == 0) {

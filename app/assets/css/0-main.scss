@@ -54,5 +54,13 @@
 		.get {
 			background-color: lightgray;
 		}
+
+		.users table {
+
+			th, td {
+				padding: 10px;
+				border: 1px solid gray;
+			}
+		}
 	}
 }

@@ -5,11 +5,13 @@ require_once('db_connect.php');
 
 ?>
 
-<table class="class">
-	<tr>
-		<td>Заголовок</td>
-		<td></td>
-		<td></td>
-		<td></td>
-	</tr>
-</table>
+<div class="users">
+	<table>
+		<tr>
+			<th>№ п/п</th>
+			<th>Пользователь</th>
+			<th>E-Mail</th>
+			<th>Примечание</th>
+		</tr>
+	</table>
+</div>
