@@ -55,12 +55,9 @@
 			background-color: lightgray;
 		}
 
-		.users table {
-
-			th, td {
-				padding: 10px;
-				border: 1px solid gray;
-			}
+		.users {
+			border: 1px solid lightgray;
+			border-radius: 15px;
 		}
 	}
 }
