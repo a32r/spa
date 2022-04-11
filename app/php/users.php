@@ -3,7 +3,9 @@
 require_once('functions.php');
 require_once('db_connect.php');
 
-$query = "SELECT * FROM users LIMIT 8";
+$table = 'users';
+$limit = '8';
+$query = "SELECT * FROM $table LIMIT $limit";
 $arr = $db->query($query)->fetchAll();
 
 ?>

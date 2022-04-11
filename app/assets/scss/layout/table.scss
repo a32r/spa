@@ -1,7 +1,7 @@
 table {
 
 	tr:nth-of-type(odd) {
-		background-color: rgb(125, 225, 200)
+		background-color: $tdColor;
 	}
 
 	th, td {
@@ -15,7 +15,7 @@ table {
 
 	tr:first-of-type {
 		background-color: unset;
-		background-image: linear-gradient(to top, rgb(100, 230, 200), transparent);
+		background-image: linear-gradient(to top, $thColor, transparent);
 		text-align: center;
 
 		th {
@@ -24,12 +24,12 @@ table {
 		}
 
 		th:first-of-type {
-			border-top-left-radius: 15px;
+			border-top-left-radius: $tableRadius;
 			border-left: none;
 		}
 
 		th:last-child {
-			border-top-right-radius: 15px;
+			border-top-right-radius: $tableRadius;
 			border-right: none;
 		}
 	}
@@ -50,11 +50,11 @@ table {
 		}
 
 		td:first-of-type {
-			border-bottom-left-radius: 15px;
+			border-bottom-left-radius: $tableRadius;
 		}
 
 		td:last-of-type {
-			border-bottom-right-radius: 15px;
+			border-bottom-right-radius: $tableRadius;
 		}
 	}
 }
