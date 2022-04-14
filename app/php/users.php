@@ -4,9 +4,11 @@ require_once('functions.php');
 require_once('db_connect.php');
 
 $table = 'users';
-$limit = '8';
-$query = "SELECT * FROM $table LIMIT $limit";
-$arr = $db->query($query)->fetchAll();
+$limit = '3';
+$arr = $db->query("SELECT * FROM $table LIMIT $limit")->fetchAll();
+$allRows = $db->query("SELECT COUNT(*) FROM $table")->fetch(PDO::FETCH_COLUMN);
+$pages = intdiv($allRows, $limit);
+/* debug($pages); */
 
 ?>
 
@@ -20,8 +22,7 @@ $arr = $db->query($query)->fetchAll();
 		</tr>
 
 <?php
-
-foreach($arr as $key => $user) {
+foreach($arr as $user) {
 	$id = $user['id'];
 	$name = $user['name'];
 	$email = $user['email'];
@@ -35,10 +36,14 @@ foreach($arr as $key => $user) {
 		<td>$description</td>
 	</tr>
 	ROW;
-
 }
-
 ?>
 
 	</table>
 </div>
+
+<?php
+
+require_once('pagination.php');
+
+?>
