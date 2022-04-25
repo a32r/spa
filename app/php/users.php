@@ -4,11 +4,11 @@ require_once('functions.php');
 require_once('db_connect.php');
 
 $table = 'users';
-$limit = '3';
+$limit = 3;
+$curPage = 1;
 $arr = $db->query("SELECT * FROM $table LIMIT $limit")->fetchAll();
 $allRows = $db->query("SELECT COUNT(*) FROM $table")->fetch(PDO::FETCH_COLUMN);
-$pages = intdiv($allRows, $limit);
-/* debug($pages); */
+$pages = ceil($allRows / $limit);
 
 ?>
 

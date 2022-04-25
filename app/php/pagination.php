@@ -3,8 +3,13 @@
 
 <?php
 for ($page=1; $page <= $pages; $page++) {
+	if($page == $curPage)  {
+		$active = "active";
+	} else {
+		unset($active);
+	}
 	echo <<<PAGINATION
-	<li class="page-item">
+	<li class="page-item $active">
 		<a class="page-link" href="#">
 			$page
 		</a>
