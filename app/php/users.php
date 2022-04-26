@@ -6,9 +6,10 @@ require_once('db_connect.php');
 $table = 'users';
 $limit = 3;
 $curPage = 1;
-$arr = $db->query("SELECT * FROM $table LIMIT $limit")->fetchAll();
+$skip = $limit * ($curPage - 1);
+$arr = $db->query("SELECT * FROM $table LIMIT $skip, $limit")->fetchAll();
 $allRows = $db->query("SELECT COUNT(*) FROM $table")->fetch(PDO::FETCH_COLUMN);
-$pages = ceil($allRows / $limit);
+$lastPage = ceil($allRows / $limit);
 
 ?>
 

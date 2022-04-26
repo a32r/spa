@@ -1,8 +1,16 @@
+<?php
+if($curPage == 1) {
+	$firstDisabled = "disabled";
+} elseif($curPage == $lastPage) {
+	$lastDisabled = "disabled";
+}
+?>
+
 <ul class="pagination justify-content-center">
-	<li class="page-item"><a class="page-link" href="#">Назад</a></li>
+<li class="page-item <?=$firstDisabled?>"><a class="page-link" href="#">Назад</a></li>
 
 <?php
-for ($page=1; $page <= $pages; $page++) {
+for ($page=1; $page <= $lastPage; $page++) {
 	if($page == $curPage)  {
 		$active = "active";
 	} else {
@@ -18,5 +26,5 @@ for ($page=1; $page <= $pages; $page++) {
 }
 ?>
 
-	<li class="page-item"><a class="page-link" href="#">Вперед</a></li>
+	<li class="page-item <?=$lastDisabled?>"><a class="page-link" href="#">Вперед</a></li>
 </ul>
