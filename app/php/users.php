@@ -1,18 +1,13 @@
 <?php
 
-require_once('functions.php');
-require_once('db_connect.php');
-
 $table = 'users';
 $limit = 3;
-$curPage = 1;
-$skip = $limit * ($curPage - 1);
-$arr = $db->query("SELECT * FROM $table LIMIT $skip, $limit")->fetchAll();
-$allRows = $db->query("SELECT COUNT(*) FROM $table")->fetch(PDO::FETCH_COLUMN);
-$lastPage = ceil($allRows / $limit);
 
-?>
+require_once('functions.php');
+require_once('db_connect.php');
+require_once('pagination.php');
 
+echo <<<HEADER
 <div class="users">
 	<table>
 		<tr>
@@ -21,30 +16,29 @@ $lastPage = ceil($allRows / $limit);
 			<th>E-Mail</th>
 			<th>Примечание</th>
 		</tr>
+HEADER;
 
-<?php
 foreach($arr as $user) {
 	$id = $user['id'];
 	$name = $user['name'];
 	$email = $user['email'];
 	$description = $user['description'];
 
-	echo <<<ROW
+	echo <<<ROWS
 	<tr>
 		<td>$id</td>
 		<td>$name</td>
 		<td>$email</td>
 		<td>$description</td>
 	</tr>
-	ROW;
+	ROWS;
 }
-?>
 
+echo <<<FOOTER
 	</table>
 </div>
+FOOTER;
 
-<?php
-
-require_once('pagination.php');
+require_once('../tpl/pagination.tpl');
 
 ?>

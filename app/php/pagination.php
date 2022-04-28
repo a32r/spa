@@ -1,30 +1,15 @@
 <?php
+
+$curPage = 1;
+$skip = $limit * ($curPage - 1);
+$arr = $db->query("SELECT * FROM $table LIMIT $skip, $limit")->fetchAll();
+$allRows = $db->query("SELECT COUNT(*) FROM $table")->fetch(PDO::FETCH_COLUMN);
+$lastPage = ceil($allRows / $limit);
+
 if($curPage == 1) {
-	$firstDisabled = "disabled";
+	$prevDisabled = "disabled";
 } elseif($curPage == $lastPage) {
-	$lastDisabled = "disabled";
+	$nextDisabled = "disabled";
 }
+
 ?>
-
-<ul class="pagination justify-content-center">
-<li class="page-item <?=$firstDisabled?>"><a class="page-link" href="#">Назад</a></li>
-
-<?php
-for ($page=1; $page <= $lastPage; $page++) {
-	if($page == $curPage)  {
-		$active = "active";
-	} else {
-		unset($active);
-	}
-	echo <<<PAGINATION
-	<li class="page-item $active">
-		<a class="page-link" href="#">
-			$page
-		</a>
-	</li>
-	PAGINATION;
-}
-?>
-
-	<li class="page-item <?=$lastDisabled?>"><a class="page-link" href="#">Вперед</a></li>
-</ul>
