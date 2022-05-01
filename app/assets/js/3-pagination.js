@@ -1,16 +1,16 @@
 $('.content').on('click', '.pagination a', function(e) {
 	e.preventDefault();
-	curPage_js = $(this).text();
+	page_js = $(this).text();
 	direction_js = $(this).attr('data-direction');
+	if(typeof direction_js !== 'undefined') {
+		page_js = direction_js;
+	}
 	$.ajax({
-		url: 'app/php/users.php',
+		url: 'app/php/pagination.php',
 		method: 'post',
-		data: {
-			curPage: curPage_js,
-			direction: direction_js
-		}
+		data: { page: page_js }
 	})
 		.done(function(data) {
-			console.log('Success!');
+			$('.content').load('app/php/users.php');
 		})
 })

@@ -1,6 +1,11 @@
 <?php
 
 $curPage = 1;
+
+if(!empty($_POST['page'])) {
+		$curPage = $_POST['page'];
+}
+
 $skip = $limit * ($curPage - 1);
 $arr = $db->query("SELECT * FROM $table LIMIT $skip, $limit")->fetchAll();
 $allRows = $db->query("SELECT COUNT(*) FROM $table")->fetch(PDO::FETCH_COLUMN);
