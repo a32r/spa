@@ -3,6 +3,12 @@
 $table = 'users';
 $limit = 3;
 
+if (empty($_POST['page'])) {
+	$curPage = 1;
+} elseif (is_int($_POST['page'])) {
+	$curPage = $_POST['page'];
+}
+
 require_once('functions.php');
 require_once('db_connect.php');
 require_once('pagination.php');

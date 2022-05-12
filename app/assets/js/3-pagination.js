@@ -6,7 +6,7 @@ $('.content').on('click', '.pagination a', function(e) {
 		page_js = direction_js;
 	}
 	$.ajax({
-		url: 'app/php/pagination.php',
+		url: 'app/php/users.php',
 		method: 'post',
 		data: { page: page_js }
 	})
