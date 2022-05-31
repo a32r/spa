@@ -6,11 +6,14 @@ $('.content').on('click', '.pagination a', function(e) {
 		page_js = direction_js;
 	}
 	$.ajax({
-		url: 'app/php/users.php',
+		url: 'app/php/db_get.php',
 		method: 'post',
 		data: { page: page_js }
 	})
 		.done(function(data) {
-			$('.content').load('app/php/users.php');
+			$('tbody').html(data);
+		})
+		.fail(function(data) {
+			$('tbody').text("Error is occur");
 		})
 })
