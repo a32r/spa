@@ -6,10 +6,10 @@ require_once('db_connect.php');
 $table = 'users';
 $limit = 3;
 
-if (empty($_POST['page'])) {
-	$curPage = 1;
-} elseif (is_int($_POST['page'])) {
+if (isset($_POST['page'])) {
 	$curPage = $_POST['page'];
+} else {
+	$curPage = 1;
 }
 
 $skip = $limit * ($curPage - 1);
@@ -46,7 +46,7 @@ foreach($arr as $user) {
 		<td>$email</td>
 		<td>$description</td>
 	</tr>
-	ROWS;
+ROWS;
 }
 
 ?>
