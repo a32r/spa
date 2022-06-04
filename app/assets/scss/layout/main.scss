@@ -10,7 +10,7 @@
 	}
 
 	.nav {
-		max-width: 140px;
+		width: 140px;
 
 		button {
 			border-radius: 6px;
@@ -18,7 +18,7 @@
 	}
 
 	.content {
-		max-width: 700px;
+		width: 700px;
 
 		.card {
 			display: flex;
@@ -53,6 +53,10 @@
 
 		.get {
 			background-color: lightgray;
+		}
+
+		.wrap {
+			height: 200px;
 		}
 
 		.users {

@@ -1,7 +1,26 @@
 table {
+	width: 100%;
 
-	tr:nth-of-type(odd) {
-		background-color: $tdColor;
+	thead {
+		tr {
+			background-image: linear-gradient(to top, $thColor, transparent);
+			text-align: center;
+
+			th {
+				border-top: none;
+				border-bottom: 2px solid lightgray;
+			}
+
+			th:first-of-type {
+				border-top-left-radius: $tableRadius;
+				border-left: none;
+			}
+
+			th:last-child {
+				border-top-right-radius: $tableRadius;
+				border-right: none;
+			}
+		}
 	}
 
 	th, td {
@@ -10,31 +29,15 @@ table {
 
 		&:first-of-type {
 			text-align: center;
-		}
-	}
-
-	tr:first-of-type {
-		background-color: unset;
-		background-image: linear-gradient(to top, $thColor, transparent);
-		text-align: center;
-
-		th {
-			border-top: none;
-			border-bottom: 2px solid lightgray;
-		}
-
-		th:first-of-type {
-			border-top-left-radius: $tableRadius;
-			border-left: none;
-		}
-
-		th:last-child {
-			border-top-right-radius: $tableRadius;
-			border-right: none;
+			width: 75px;
 		}
 	}
 
 	tr {
+		&:nth-of-type(even) {
+			background-color: $tdColor;
+		}
+
 		td:first-of-type {
 			border-left: none;
 		}
