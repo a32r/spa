@@ -8,12 +8,28 @@ $('.content').on('click', '.pagination a', function(e) {
 	$.ajax({
 		url: 'app/php/db_get.php',
 		method: 'post',
-		data: { page: page_js }
+		data: { 
+			page: page_js
+		}
 	})
 		.done(function(data) {
 			$('tbody').html(data);
 		})
 		.fail(function(data) {
-			$('tbody').text("Error is occur");
+			$('tbody').html(data);
+		});
+	$.ajax({
+		url: 'app/php/db_get.php',
+		method: 'post',
+		data: { 
+			page: page_js,
+			staff: "pagination"
+		}
+	})
+		.done(function(data) {
+			$('.pagination').html(data);
+		})
+		.fail(function(data) {
+			$('.pagination').html(data);
 		})
 })
