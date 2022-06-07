@@ -11,9 +11,9 @@
 			</thead>
 			<tbody>
 
-				<?php
-				 require_once('../php/db_get.php');
-			 ?>
+			<?php
+				require_once('db_get.php');
+			?>
 
 			</tbody>
 		</table>
@@ -22,7 +22,7 @@
 <div class="pag">
 
 	<?php
-		require_once('pagination.tpl');
+		require_once('../tpl/pagination.tpl');
 	?>
 
 </div>
