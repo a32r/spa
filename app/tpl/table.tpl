@@ -12,10 +12,17 @@
 			<tbody>
 
 				<?php
-			 require_once('../php/db_get.php');
+				 require_once('../php/db_get.php');
 			 ?>
 
 			</tbody>
 		</table>
 	</div>
+</div>
+<div class="pag">
+
+	<?php
+		require_once('pagination.tpl');
+	?>
+
 </div>

@@ -27,9 +27,9 @@ $('.content').on('click', '.pagination a', function(e) {
 		}
 	})
 		.done(function(data) {
-			$('.pagination').html(data);
+			$('.pag').html(data);
 		})
 		.fail(function(data) {
-			$('.pagination').html(data);
+			$('.pag').html(data);
 		})
 })

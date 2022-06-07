@@ -35,7 +35,7 @@ $('.content').on('click', '.get input[value="Вход"]', function(e) {
 					setTimeout(function() {
 						$('.get .message').remove();
 						if(data) {
-							$('.content').load('app/php/users.php');
+							$('.content').load('app/tpl/table.tpl');
 						}
 					}, 1000);
 				}

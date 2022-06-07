@@ -2,7 +2,7 @@
 content = false;
 
 // Temporary load usrs.php to .content
-$('.content').load('app/php/users.php');
+$('.content').load('app/tpl/table.tpl');
 
 $('#send').click(function() {
 	if (content) {
