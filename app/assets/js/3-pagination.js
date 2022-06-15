@@ -1,9 +1,12 @@
 $('.content').on('click', '.pagination a', function(e) {
 	e.preventDefault();
+	cur_page_js = Number($('.active').text());
 	page_js = $(this).text();
 	direction_js = $(this).attr('data-direction');
-	if(typeof direction_js !== 'undefined') {
-		page_js = direction_js;
+	if(direction_js == "next") {
+		page_js = cur_page_js + 1;
+	} else if (direction_js == "prev") {
+		page_js = cur_page_js - 1;
 	}
 	$.ajax({
 		url: 'app/php/db_get.php',
