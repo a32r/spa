@@ -35,7 +35,7 @@ $('.content').on('click', '.get input[value="Вход"]', function(e) {
 					setTimeout(function() {
 						$('.get .message').remove();
 						if(data) {
-							$('.content').load('app/php/table.php');
+							$('.content').load('app/php/users.php');
 						}
 					}, 1000);
 				}
@@ -51,7 +51,7 @@ $('.content').on('click', '.get input[value="Вход"]', function(e) {
 		login_js = undefined;
 		pass_js = undefined;
 		hash_js = undefined;
-		// $('.get .login, .get .pass').val('');
+		$('.get .login, .get .pass').val('');
 	} else {
 		if ($('.get .message').length == 0) {
 			$('.get').append('<div class="message">Необходимо заполнить все поля</div>');

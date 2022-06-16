@@ -12,7 +12,9 @@ $('.content').on('click', '.pagination a', function(e) {
 		url: 'app/php/db_get.php',
 		method: 'post',
 		data: { 
-			page: page_js
+			page: page_js,
+			table: "users",
+			limit: 3
 		}
 	})
 		.done(function(data) {
@@ -26,7 +28,9 @@ $('.content').on('click', '.pagination a', function(e) {
 		method: 'post',
 		data: { 
 			page: page_js,
-			staff: "pagination"
+			staff: "pagination",
+			table: "users",
+			limit: 3
 		}
 	})
 		.done(function(data) {

@@ -3,13 +3,14 @@
 require_once('functions.php');
 require_once('db_connect.php');
 
-$table = 'users';
-$limit = 3;
-
 if (isset($_POST['page'])) {
 	$curPage = $_POST['page'];
-} else {
-	$curPage = 1;
+}
+if (isset($_POST['table'])) {
+	$table = $_POST['table'];
+}
+if (isset($_POST['limit'])) {
+	$limit = $_POST['limit'];
 }
 
 $skip = $limit * ($curPage - 1);
