@@ -11,7 +11,7 @@ $('.content').on('blur', '.get .pass', function() {
 
 $('.content').on('click', '.get input[value="Вход"]', function(e) {
 	e.preventDefault();
-	if ((typeof login_js !== 'undefined') && (typeof pass_js !== 'undefined')) {
+	if ((typeof(login_js) !== 'undefined') && (login_js !== '') && (pass_js !== '')) {
 		var md = forge.md.sha256.create();
 		md.update(salt + pass_js);
 		hash_js = md.digest().toHex();

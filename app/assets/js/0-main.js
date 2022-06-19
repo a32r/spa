@@ -1,8 +1,8 @@
 // Define variables
 content = false;
 
-// Temporary load usrs.php to .content
-// $('.content').load('app/php/users.php');
+// Temporary load to .content
+// $('.content').load('app/php/send.php');
 
 $('#send').click(function() {
 	if (content) {

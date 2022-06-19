@@ -12,7 +12,7 @@ $('.content').on('blur', '.send .description', function() {
 
 $('.content').on('click', '.send input[value="Отправить"]', function(e) {
 	e.preventDefault();
-	if ((typeof name_js !== 'undefined') && (typeof email_js !== 'undefined') && (typeof description_js !== 'undefined')) {
+	if ( (typeof(name_js) !== 'undefined') && (name_js !== '') && (email_js !== '') && (description_js !== '')) {
 		$.ajax({
 			url: 'app/php/send.php',
 			method: 'post',
