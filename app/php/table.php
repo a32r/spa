@@ -19,10 +19,7 @@
 		</table>
 	</div>
 </div>
-<div class="pag">
 
-	<?php
-		require_once('../tpl/pagination.tpl');
-	?>
-
-</div>
+<?php
+	require_once('../tpl/pagination.tpl');
+?>

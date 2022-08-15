@@ -34,9 +34,9 @@ $('.content').on('click', '.pagination a', function(e) {
 		}
 	})
 		.done(function(data) {
-			$('.pag').html(data);
+			$('.pagination').replaceWith(data);
 		})
 		.fail(function(data) {
-			$('.pag').html(data);
+			$('.pagination').replaceWith(data);
 		})
 })

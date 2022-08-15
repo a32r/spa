@@ -4,6 +4,8 @@ require_once('functions.php');
 require_once('db_connect.php');
 
 $table = 'send';
+$limit = 3;
+$curPage = 1;
 
 if(!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['description'])) {
 	$name = htmlspecialchars($_POST['name']);
@@ -19,4 +21,5 @@ if(!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['descripti
 }
 
 require_once('../tpl/send_form.tpl');
+require_once('table.php');
 ?>
