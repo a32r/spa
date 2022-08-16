@@ -1,4 +1,4 @@
-$('.content').on('click', '.pagination a', function(e) {
+$('.content').on('click', '.records-users a', function(e) {
 	e.preventDefault();
 	cur_page_js = Number($('.active').text());
 	page_js = $(this).text();
@@ -35,6 +35,7 @@ $('.content').on('click', '.pagination a', function(e) {
 	})
 		.done(function(data) {
 			$('.pagination').replaceWith(data);
+			$('.pagination').addClass('records-users');
 		})
 		.fail(function(data) {
 			$('.pagination').replaceWith(data);

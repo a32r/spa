@@ -36,6 +36,9 @@ $('.content').on('click', '.get input[value="Вход"]', function(e) {
 						$('.get .message').remove();
 						if(data) {
 							$('.content').load('app/php/users.php');
+							setTimeout(function() {
+								$('.pagination').addClass('records-users');
+							}, 300);
 						}
 					}, 1000);
 				}

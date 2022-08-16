@@ -2,7 +2,7 @@
 content = false;
 
 // Temporary load to .content
-// $('.content').load('app/php/users.php');
+// $('.content').load('app/php/login.php');
 
 $('#send').click(function() {
 	if (content) {
@@ -10,7 +10,7 @@ $('#send').click(function() {
 			$('.content').load('app/php/send.php');
 			setTimeout(function() {
 				$('.pagination').addClass('records');
-			}, 1000);
+			}, 300);
 		} else {
 			$('.content').empty();
 			content = false;
@@ -19,7 +19,7 @@ $('#send').click(function() {
 		$('.content').load('app/php/send.php');
 		setTimeout(function() {
 			$('.pagination').addClass('records');
-		}, 1000);
+		}, 300);
 		content = true;
 	}
 });
