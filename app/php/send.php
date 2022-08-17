@@ -20,6 +20,12 @@ if(!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['descripti
 	}
 }
 
+if(!empty($_POST['truncate'])) {
+	$query = "TRUNCATE TABLE $table";
+	$arr = $db->query($query);
+	exit(true);
+}
+
 require_once('../tpl/send_form.tpl');
 require_once('table.php');
 ?>

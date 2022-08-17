@@ -2,7 +2,7 @@
 content = false;
 
 // Temporary load to .content
-// $('.content').load('app/php/login.php');
+$('.content').load('app/php/send.php');
 
 $('#send').click(function() {
 	if (content) {

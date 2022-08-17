@@ -13,4 +13,5 @@
 		<textarea class="form-control description" name="description" rows="5" placeholder="Описание"></textarea>
 	</div>
 	<input class="btn btn-primary" type="submit" value="Отправить">
+	<input class="btn btn-primary" type="submit" value="Очистить БД">
 </div>

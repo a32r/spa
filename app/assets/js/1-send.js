@@ -53,3 +53,31 @@ $('.content').on('click', '.send input[value="Отправить"]', function(e)
 		}
 	}
 });
+$('.content').on('click', '.send input[value="Очистить БД"]', function(e) {
+	e.preventDefault();
+	$.ajax({
+		url: 'app/php/send.php',
+		method: 'post',
+		data: {
+			truncate: 1
+		}
+	})
+		.done(function(data) {
+			if(data) {
+				if ($('.send .message').length == 0) {
+					$('.send').append('<div class="message">База данных очищена</div>');
+					setTimeout(function() {
+						$('.send .message').remove();
+					}, 1000);
+				}
+			}
+		})
+		.fail(function() {
+			if ($('.send .message').length == 0) {
+				$('.send').append('<div class="message">Ошибка. Операция не выполнена</div>');
+				setTimeout(function() {
+					$('.send .message').remove();
+				}, 1000);
+			}
+		});
+});
