@@ -23,6 +23,7 @@ $('.content').on('click', '.send input[value="Отправить"]', function(e)
 			}
 		})
 			.done(function(data) {
+				console.log(data);
 				if(data) {
 					if ($('.send .message').length == 0) {
 						$('.send').append('<div class="message">Данные успешно внесены в базу</div>');
@@ -30,6 +31,38 @@ $('.content').on('click', '.send input[value="Отправить"]', function(e)
 							$('.send .message').remove();
 						}, 1000);
 					}
+					$.ajax({
+						url: 'app/php/db_get.php',
+						method: 'post',
+						data: { 
+							page: data,
+							table: "send",
+							limit: 3
+						}
+					})
+						.done(function(data) {
+							$('tbody').html(data);
+						})
+						.fail(function(data) {
+							$('tbody').html(data);
+						});
+					$.ajax({
+						url: 'app/php/db_get.php',
+						method: 'post',
+						data: { 
+							page: data,
+							staff: "pagination",
+							table: "send",
+							limit: 3
+						}
+					})
+						.done(function(data) {
+							$('.pagination').replaceWith(data);
+							$('.pagination').addClass('records');
+						})
+						.fail(function(data) {
+							$('.pagination').replaceWith(data);
+						})
 				}
 			})
 			.fail(function() {
@@ -65,7 +98,7 @@ $('.content').on('click', '.send input[value="Очистить БД"]', function
 		.done(function(data) {
 			if(data) {
 				if ($('.send .message').length == 0) {
-					$('.send').append('<div class="message">База данных очищена</div>');
+					$('.send').append('<div class="message">База данных успешно очищена</div>');
 					setTimeout(function() {
 						$('.send .message').remove();
 					}, 1000);

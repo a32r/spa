@@ -16,7 +16,9 @@ if(!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['descripti
 	$stmt->execute([$name, $email, $description]);
 
 	if($stmt) {
-		exit(true);
+		$allRows = $db->query("SELECT COUNT(*) FROM $table")->fetch(PDO::FETCH_COLUMN);
+		$lastPage = ceil($allRows / $limit);
+		exit($lastPage);
 	}
 }
 
