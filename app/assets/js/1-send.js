@@ -23,7 +23,6 @@ $('.content').on('click', '.send input[value="Отправить"]', function(e)
 			}
 		})
 			.done(function(data) {
-				console.log(data);
 				if(data) {
 					if ($('.send .message').length == 0) {
 						$('.send').append('<div class="message">Данные успешно внесены в базу</div>');
@@ -63,6 +62,7 @@ $('.content').on('click', '.send input[value="Отправить"]', function(e)
 						.fail(function(data) {
 							$('.pagination').replaceWith(data);
 						})
+					$('.wrap, .pagination').show();
 				}
 			})
 			.fail(function() {
@@ -103,6 +103,7 @@ $('.content').on('click', '.send input[value="Очистить БД"]', function
 						$('.send .message').remove();
 					}, 1000);
 				}
+				$('.wrap, .pagination').hide();
 			}
 		})
 		.fail(function() {
