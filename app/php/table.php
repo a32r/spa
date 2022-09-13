@@ -1,4 +1,4 @@
-<div class="wrap">
+<div class="wrap" <?=$tableHidden?>>
 	<div class="users">
 		<table>
 			<thead>

@@ -40,6 +40,7 @@ $('.content').on('click', '.send input[value="Отправить"]', function(e)
 						}
 					})
 						.done(function(data) {
+							$('.wrap').removeAttr('hidden');
 							$('tbody').html(data);
 						})
 						.fail(function(data) {

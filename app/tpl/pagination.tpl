@@ -1,4 +1,4 @@
-<ul class="pagination justify-content-center">
+<ul class="pagination justify-content-center" <?=$tableHidden?>>
 	<li class="page-item <?=$prevDisabled?>"><a data-direction="prev" class="page-link" href="#">Назад</a></li>
 	<li class="page-item" <?=$firstPageHidden?>><a class="page-link" href="#">1</a></li>
 	<li class="page-item disabled" <?=$prevDotsHidden?>><a class="page-link" href="#">...</a></li>

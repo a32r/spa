@@ -28,6 +28,12 @@ if(!empty($_POST['truncate'])) {
 	exit(true);
 }
 
+$allRows = $db->query("SELECT COUNT(*) FROM $table")->fetch(PDO::FETCH_COLUMN);
+$lastPage = ceil($allRows / $limit);
+if($lastPage == 0) {
+	$tableHidden = "hidden";
+}
+
 require_once('../tpl/send_form.tpl');
 require_once('table.php');
 ?>
