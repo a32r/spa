@@ -21,15 +21,20 @@ $lastPage = ceil($allRows / $limit);
 if ($curPage == 1) {
 	$prevDisabled = "disabled";
 	$firstPageHidden = $prevDotsHidden = $prevPageHidden = "hidden";
-} elseif ($curPage - 1 == 1) {
+}
+if ($curPage - 1 == 1) {
 	$firstPageHidden = $prevDotsHidden = "hidden";
-} elseif ($curPage - 2 == 1) {
+}
+if ($curPage - 2 == 1) {
 	$firstPageHidden = "hidden";
-} elseif ($curPage + 2 == $lastPage) {
+}
+if ($curPage + 2 == $lastPage) {
 	$lastPageHidden = "hidden";
-} elseif ($curPage + 1 == $lastPage) {
+}
+if ($curPage + 1 == $lastPage) {
 	$lastPageHidden = $nextDotsHidden = "hidden";
-} elseif ($curPage == $lastPage) {
+}
+if ($curPage == $lastPage) {
 	$nextDisabled = "disabled";
 	$lastPageHidden = $nextDotsHidden = $nextPageHidden = "hidden";
 }

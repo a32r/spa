@@ -1,7 +1,7 @@
 <?php
 
 $dbHost = "localhost";
-$dbName = "ajax1";
+$dbName = "spa";
 $dbUser = "root";
 $dbPass = "";
 $dbOpts = [
