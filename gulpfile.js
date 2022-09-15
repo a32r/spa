@@ -10,8 +10,8 @@ const cleancss = require('gulp-clean-css');
 function browsersync() {
 	browserSync.init({ // Инициализация Browsersync
 		// server: { baseDir: './src' }, // browserSync alone
-		proxy: "localhost/ajax1/src", // xampp proxy
-		port: 8080, // Порт proxy
+		proxy: "localhost/spa/src", // xampp proxy
+		port: 3073, // Порт proxy
 		notify: false, // Отключение уведомлений
 		online: false // Режим работы: true или false
 	})
@@ -40,27 +40,27 @@ function scripts() {
 }
 
 function scss() {
-	return src('./src/app/assets/css/**/*.scss') // Подключение пользовательских scss стилей
+	return src('./src/app/assets/scss/style.scss') // Подключение пользовательских scss стилей
 		.pipe(sass({outputStyle: 'compressed'})) // Обработка  файлов препроцессором sass
 		.pipe(autoprefixer({ overrideBrowserslist: ['last 10 versions'], grid: true })) // Создание префиксов с помощью Autoprefixer
 		.pipe(concat('custom.min.css')) // Объединение стилей в один custom.min.css файл
 		.pipe(cleancss( { level: { 1: { specialComments: 0 } }/* , format: 'beautify' */ } )) // Минификация стилей
-		.pipe(dest('./src/app/assets/css')) // Выгрузка main.min.scss в папку назначения
+		.pipe(dest('./src/app/assets/scss')) // Выгрузка main.min.scss в папку назначения
 }
 
 function styles() {
 	return src([
 		'./node_modules/bootstrap/dist/css/bootstrap.min.css', // Подключение Bootstrap css
-		'./src/app/assets/css/custom.min.css' // Подключение пользовательских стилей
+		'./src/app/assets/scss/custom.min.css' // Подключение пользовательских стилей
 	], { allowEmpty: true })
 		.pipe(concat('app.min.css')) // Объединение стилей в один файл
-		.pipe(dest('./src/app/assets/css')) // Выгрузка объединенных стилей в папку назначения
+		.pipe(dest('./src/app/assets/scss')) // Выгрузка объединенных стилей в папку назначения
 		.pipe(browserSync.stream()) // Обновление страницы в браузере с помощью Browsersync
 }
 
 function startwatch() {
 	watch(['./src/app/assets/js/**/*.js', '!./src/app/assets/js/**/*.min.js'], series(js, scripts)); // Наблюдение за файлами js кроме файлов *.min.js
-	watch('./src/app/assets/css/**/*.scss', series(scss, styles)); // Наблюдение за файлами scss
+	watch('./src/app/assets/scss/**/*.scss', series(scss, styles)); // Наблюдение за файлами scss
 	// watch('./src/**/*.css').on('change', browserSync.reload); // Наблюдение за файлами css
 	watch('./src/**/*.html').on('change', browserSync.reload); // Наблюдение за файлами html
 	watch('./src/**/*.php').on('change', browserSync.reload); // Наблюдение за файлами php

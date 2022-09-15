@@ -1,6 +1,6 @@
 -- MariaDB dump 10.19  Distrib 10.4.24-MariaDB, for Linux (x86_64)
 --
--- Host: localhost    Database: ajax1
+-- Host: localhost    Database: spa
 -- ------------------------------------------------------
 -- Server version	10.4.24-MariaDB
 
@@ -16,12 +16,12 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Current Database: `ajax1`
+-- Current Database: `spa`
 --
 
-CREATE DATABASE /*!32312 IF NOT EXISTS*/ `ajax1` /*!40100 DEFAULT CHARACTER SET utf8 */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `spa` /*!40100 DEFAULT CHARACTER SET utf8 */;
 
-USE `ajax1`;
+USE `spa`;
 
 --
 -- Table structure for table `login`
@@ -61,7 +61,7 @@ CREATE TABLE `send` (
   `email` varchar(100) NOT NULL,
   `description` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -70,7 +70,7 @@ CREATE TABLE `send` (
 
 LOCK TABLES `send` WRITE;
 /*!40000 ALTER TABLE `send` DISABLE KEYS */;
-INSERT INTO `send` VALUES (1,'5','5','5'),(2,'1','1','1'),(3,'p','o','p');
+INSERT INTO `send` VALUES (1,'1','1','1'),(2,'2','2','2'),(3,'3','3','3'),(4,'4','4','4'),(5,'5','5','5'),(6,'6','6','6'),(7,'7','7','7'),(8,'8','8','8'),(9,'9','9','9'),(10,'10','10','10'),(11,'11','11','11'),(12,'12','12','12'),(13,'13','13','13'),(14,'14','14','14'),(15,'15','15','15'),(16,'16','16','16'),(17,'17','17','17'),(18,'18','18','18'),(19,'19','19','19'),(20,'20','20','20');
 /*!40000 ALTER TABLE `send` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -109,4 +109,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-04-27 22:51:42
+-- Dump completed on 2022-09-15 21:46:09
